@@ -1,0 +1,23 @@
+{
+  "name": "automationexercise-cypress",
+  "version": "1.0.0",
+  "description": "https://automationexercise.com/test_cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabicaneyu/automationexercise-cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fabicaneyu/automationexercise-cypress/issues"
+  },
+  "homepage": "https://github.com/Fabicaneyu/automationexercise-cypress#readme",
+  "devDependencies": {
+    "cypress": "^12.5.0"
+  }
+}
