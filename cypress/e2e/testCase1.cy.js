@@ -5,7 +5,7 @@ describe('Página de login', () => {
     beforeEach(() => {
         cy.visit('https://automationexercise.com/')
     })
-    it('Exercicio 1 Register user', () => {
+    it('Test Case 1: Register User', () => {
         //home 
         cy.contains('AutomationExercise').should('be.visible');  
         cy.contains('a', 'Signup / Login').click();
