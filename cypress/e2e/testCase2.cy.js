@@ -12,7 +12,7 @@ describe('Página de login', () => {
         //página começo de cadastro coleta nome e email
         cy.contains('New User Signup!').should('be.visible');
         cy.get('[data-qa="signup-name"]').type('Fabi Canedo');
-        cy.get('[data-qa="signup-email"]').type('testing@email.com.br');
+        cy.get('[data-qa="signup-email"]').type('qa@email.com.br');
         cy.contains('button', 'Signup').click();
         //página cadastro completo (nome e email já devem vir preenchidos)
         cy.contains(':nth-child(1) > b', 'Enter Account Information').should('be.visible');
@@ -37,19 +37,19 @@ describe('Página de login', () => {
         cy.get('[data-qa="zipcode"]').type('11111111');
         cy.get('[data-qa="mobile_number"]').type('119811111');
         cy.contains('button', 'Create Account').click();
-        // area logada após criar conta
+        // area logada após criar conta e logout
         cy.contains('Account Created!').should('be.visible');
         cy.contains('a', 'Continue').click();
         cy.contains('Logged in as').should('be.visible');
-       
+        cy.get('.shop-menu > .nav > :nth-child(4) > a').click()
+        // Test case 2: logar em uma conta criada corretamente
+        cy.contains('Login to your account').should('be.visible');
+        cy.get('[data-qa="login-email"]').type('qa@email.com.br');
+        cy.get('[data-qa="login-password"]').type('123456');
+        cy.get('[data-qa="login-button"]').click();
+        // deletar conta
+        cy.contains('Logged in as').should('be.visible');
+        cy.contains('a', 'Delete Account').click();
+        cy.contains('Account Deleted!').should('be.visible');
       })
-
 })
-
-
-//5. Verify 'Login to your account' is visible
-//6. Enter correct email address and password
-//7. Click 'login' button
-//8. Verify that 'Logged in as username' is visible
-//9. Click 'Delete Account' button
-//10. Verify that 'ACCOUNT DELETED!' is visible
